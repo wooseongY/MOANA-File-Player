@@ -30,6 +30,7 @@ $ python3 timestamp_gen.py
 ```
 Then, data_stamp.csv file will be created in your data directory.
 The final directory are represents as following:
+```
 📂 Sequence_name/
 ├── 📂 sensor_data/
 │   ├── 📂 Camera_left/
@@ -43,6 +44,7 @@ The final directory are represents as following:
 │   ├── 📂 X_band_radar/
 │   │   └── 📝 timestamp.png
 └── 📝 data_stamp.csv
+```
 
 ## 4. Load data files and play
 

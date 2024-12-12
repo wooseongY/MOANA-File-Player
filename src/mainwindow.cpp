@@ -11,6 +11,13 @@ MainWindow::MainWindow(QWidget *parent) :
   ui_->setupUi(this);
   my_ros_->start();
 
+  // Convert float values to QString and update the label text
+  QString text = QString("[Time] %3:%4 / %1:%2 (Current / End)")
+      .arg(0, 2, 10, QChar('0'))
+      .arg(0, 2, 10, QChar('0'))
+      .arg(0, 2, 10, QChar('0'))
+      .arg(0, 2, 10, QChar('0'));
+  this->ui_->label_5->setText(text);
   slider_checker_ = false;
   play_flag_ = false;
   pause_flag_ = false;
@@ -36,18 +43,6 @@ MainWindow::MainWindow(QWidget *parent) :
     ui_->checkBox->setCheckState(Qt::Checked);
   }else{
     ui_->checkBox->setCheckState(Qt::Unchecked);
-  }
-  connect(ui_->checkBox_2, SIGNAL(stateChanged(int)), this, SLOT (StopSkipFlagChange(int)));
-  if(stop_skip_flag_ == true){
-    ui_->checkBox_2->setCheckState(Qt::Checked);
-  }else{
-    ui_->checkBox_2->setCheckState(Qt::Unchecked);
-  }
-  connect(ui_->checkBox_3, SIGNAL(stateChanged(int)), this, SLOT (AutoStartFlagChange(int)));
-  if(my_ros_->auto_start_flag_ == true){
-    ui_->checkBox_3->setCheckState(Qt::Checked);
-  }else{
-    ui_->checkBox_3->setCheckState(Qt::Unchecked);
   }
 
   connect(ui_->horizontalSlider, SIGNAL(sliderPressed()), this, SLOT(SliderPressed()));
@@ -113,6 +108,21 @@ void MainWindow::FilePathSet()
 void MainWindow::SetStamp(quint64 stamp)
 {
   this->ui_->label_2->setText(QString::number(stamp));
+  float end_time = static_cast<float>(my_ros_->last_data_stamp_ - my_ros_->initial_data_stamp_) / 1e9;
+  float current_time = static_cast<float>(stamp - my_ros_->initial_data_stamp_) / 1e9;
+
+  int end_minute = end_time / 60;
+  int end_second = int(end_time) - end_minute * 60;
+  int current_minute = current_time / 60;
+  int current_second = int(current_time) - current_minute * 60;
+
+  // Convert float values to QString and update the label text
+  QString text = QString("[Time] %3:%4 / %1:%2 (Current / End)")
+      .arg(end_minute, 2, 10, QChar('0'))
+      .arg(end_second, 2, 10, QChar('0'))
+      .arg(current_minute, 2, 10, QChar('0'))
+      .arg(current_second, 2, 10, QChar('0'));
+  this->ui_->label_5->setText(text);
 
   //set slide bar
   if(slider_checker_ == false){
@@ -166,24 +176,6 @@ void MainWindow::LoopFlagChange(int value)
     my_ros_->loop_flag_ = false;
   }
 }
-void MainWindow::StopSkipFlagChange(int value)
-{
-  if(value == 2){
-    stop_skip_flag_ = true;
-    my_ros_->stop_skip_flag_ = true;
-  }else if(value == 0){
-    stop_skip_flag_ = false;
-    my_ros_->stop_skip_flag_ = false;
-  }
-}
-void MainWindow::AutoStartFlagChange(int value)
-{
-  if(value == 2){
-    my_ros_->auto_start_flag_ = true;
-  }else if(value == 0){
-    my_ros_->auto_start_flag_ = false;
-  }
-}
 
 void MainWindow::Save()
 {
@@ -199,6 +191,7 @@ void MainWindow::Save()
     this->ui_->pushButton_4->setText(QString::fromStdString("Rosbag Save"));
   }
 }
+
 
 void MainWindow::SliderValueChange(int value)
 {

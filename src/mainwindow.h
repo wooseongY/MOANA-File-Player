@@ -52,12 +52,10 @@ private slots:
   void TryClose();
   void FilePathSet();
   void Play();
-  void Save();
   void Pause();
+  void Save();
   void PlaySpeedChange(double value);
   void LoopFlagChange(int value);
-  void StopSkipFlagChange(int value);
-  void AutoStartFlagChange(int value);
   void SetStamp(quint64 stamp);
   void SliderValueChange(int value);
   void SliderPressed();

@@ -17,8 +17,8 @@ find_package(catkin REQUIRED cmake_modules
   rosbag
   image_transport
   cv_bridge
-  dynamic_reconfigure
-  pcl_ros
+   
+  p  cl_ros
   pcl_conversions
   pcl_msgs
   camera_info_manager

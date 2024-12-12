@@ -1,6 +1,6 @@
 # File player for MOANA dataset
 
-This program is a file player for the [MOANA dataset](https://sites.google.com/view/rpmmoana). 
+This program is a file player for the [MOANA dataset](https://sites.google.com/view/rpmmoana). Please use the issue in this github page to report a bug or ask questions.
 
 
 ## 1. How to install, Build, and Run

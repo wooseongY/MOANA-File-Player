@@ -9,9 +9,8 @@ This program is a file player for the [MOANA dataset](https://sites.google.com/v
 ```
 $ mkdir -p catkin_ws/src
 $ cd catkin_ws/src
-$ git clone -b [main] https://github.com/wooseongY/MOANA-File-Player.git
-$ cd ../..
-$ catkin_make
+$ git clone  https://github.com/wooseongY/MOANA-File-Player.git
+$ cd .. && catkin build
 ```
 - This version is tested in ROS-noetic
 

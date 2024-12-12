@@ -26,10 +26,8 @@
 
 #include <sensor_msgs/PointCloud2.h>
 #include <sensor_msgs/Image.h>
-#include <sensor_msgs/LaserScan.h>
 #include <rosgraph_msgs/Clock.h>
 
-#include <camera_info_manager/camera_info_manager.h>
 #include <std_msgs/String.h>
 #include <std_msgs/Bool.h>
 #include <std_srvs/SetBool.h>
@@ -37,10 +35,6 @@
 #include <std_msgs/Float32.h>
 #include <std_msgs/Float64.h>
 #include <sensor_msgs/NavSatFix.h>
-#include <novatel_gps_msgs/Inspva.h>
-#include <sensor_msgs/LaserScan.h>
-#include <sensor_msgs/CameraInfo.h>
-#include <sensor_msgs/SetCameraInfo.h>
 
 #include <nav_msgs/Odometry.h>
 #include <geometry_msgs/Quaternion.h>
@@ -205,11 +199,6 @@ public:
     QMutex *mutex_;
     std::mutex bag_mutex_;
     ros::NodeHandle nh_;
-    ros::NodeHandle left_camera_nh_;
-    ros::NodeHandle right_camera_nh_;
-
-    boost::shared_ptr<camera_info_manager::CameraInfoManager> left_cinfo_;
-    boost::shared_ptr<camera_info_manager::CameraInfoManager> right_cinfo_;
 
 
     int64_t initial_data_stamp_;

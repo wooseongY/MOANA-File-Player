@@ -21,7 +21,6 @@ find_package(catkin REQUIRED cmake_modules
   pcl_ros
   pcl_conversions
   pcl_msgs
-  camera_info_manager
   tf
 )
 set(CMAKE_AUTOMOC ON)
@@ -66,7 +65,6 @@ catkin_package(
     pcl_ros
     pcl_conversions  
     pcl_msgs
-    camera_info_manager
     tf
 
   DEPENDS 

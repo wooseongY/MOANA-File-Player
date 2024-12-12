@@ -23,13 +23,15 @@ $ roslaunch moana_file_player moana_file_player.launch
 ```
 
 ## 3. Prepare the data and timestamps
-Before load the data, you need to generate data_stamp.csv with timestamp_gen.py
+Before load the data, you need to generate data_stamp.csv with timestamp_gen.py.
+
 You have to change the base_dir in timestamp_gen.py to appropriate path for your data.
 ```
 $ python3 timestamp_gen.py
 ```
 Then, data_stamp.csv file will be created in your data directory.
-The final directory are represents as following:
+
+The final directory are represented as following:
 ```
 📂 Sequence_name/
 ├── 📂 sensor_data/
@@ -48,11 +50,11 @@ The final directory are represents as following:
 
 ## 4. Load data files and play
 
-1. Click 'Load' button.
+1. Click the "Load" button.
 2. Choose Sequence_name folder including sensor_data folder and data_stamp.csv.
 3. The "Play" button starts publishing data in the ROS message.
 4. The "Pause/Resume" button pauses and resumes publishing data.
-5. The "Save" button saves all topics into rosbag file.
+5. The "Save" button saves all topics into the rosbag file.
 6. The "Loop" checkbox resumes when playback is finished.
 
 Enjoy it:) 

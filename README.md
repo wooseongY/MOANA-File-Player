@@ -1,7 +1,9 @@
 # File player for MOANA dataset
 
-This program is a file player for the [MOANA dataset](https://sites.google.com/view/rpmmoana). Please use the issue in this github page to report a bug or ask questions.
+This program is a file player for the [MOANA dataset](https://sites.google.com/view/rpmmoana).
+Please use the issue in this github page to report a bug or ask questions.
 
+See the **ros2** branch for the ros2 version fileplayer.
 
 ## 1. How to install, Build, and Run
 ```

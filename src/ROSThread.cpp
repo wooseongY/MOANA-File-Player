@@ -77,11 +77,11 @@ void ROSThread::ros_initialize(rclcpp::Node::SharedPtr node)
     // Publishers
     gps_pub_ = node_->create_publisher<sensor_msgs::msg::NavSatFix>("/gps/fix", 10);
 
-    lidar_pub_ = node_->create_publisher<sensor_msgs::msg::PointCloud2>("/lidar", 10);
-    xband_pub_ = node_->create_publisher<sensor_msgs::msg::Image>("/xband_radar", 10);
-    wband_pub_ = node_->create_publisher<sensor_msgs::msg::Image>("/wband_radar", 10);
-    stereo_left_pub_ = node_->create_publisher<sensor_msgs::msg::Image>("/camera_left", 10); // camera_0
-    stereo_right_pub_ = node_->create_publisher<sensor_msgs::msg::Image>("/camera_right", 10); // camera_1
+    lidar_pub_ = node_->create_publisher<sensor_msgs::msg::PointCloud2>("/lidar", 10000);
+    xband_pub_ = node_->create_publisher<sensor_msgs::msg::Image>("/xband_radar", 10000);
+    wband_pub_ = node_->create_publisher<sensor_msgs::msg::Image>("/wband_radar", 10000);
+    stereo_left_pub_ = node_->create_publisher<sensor_msgs::msg::Image>("/camera_left", 10000); // camera_0
+    stereo_right_pub_ = node_->create_publisher<sensor_msgs::msg::Image>("/camera_right", 10000); // camera_1
 
     // Clock Publisher
     clock_pub_ = node_->create_publisher<rosgraph_msgs::msg::Clock>("/clock", 10);

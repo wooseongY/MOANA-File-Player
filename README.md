@@ -20,7 +20,7 @@ $ roslaunch moana_file_player moana_file_player.launch
 ## 2. Prepare the data and timestamps
 Before loading the data, you need to generate data_stamp.csv with timestamp_gen.py.
 
-You have to change the base_dir in timestamp_gen.py to the appropriate path for your data.
+You have to change the "**base_dir**" in **timestamp_gen.py** to the appropriate path for your data.
 ```
 $ python3 timestamp_gen.py
 ```

@@ -56,6 +56,6 @@ Enjoy it:)
 
 ## Maintainer
 
-Wooseong Yang (yellowish@snu.ac.kr)
+Wooseong Yang (wseongy15@gmail.com)
 Hyesu Jang (hsjang@seadronix.com)
 
